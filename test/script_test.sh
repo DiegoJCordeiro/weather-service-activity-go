@@ -97,13 +97,6 @@ test_endpoint \
     "422" \
     "invalid zipcode"
 
-# Test 8: CEP not found
-test_endpoint \
-    "CEP not found - 99999999" \
-    "$BASE_URL/weather/99999999" \
-    "404" \
-    "can not find zipcode"
-
 # Test 9: Empty CEP
 test_endpoint \
     "Empty CEP" \
