@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-BASE_URL="${1:-http://localhost:8080}"
+BASE_URL="${1:-https://weather-service-activity-go-617034962015.us-central1.run.app}"
 
 echo -e "${YELLOW}========================================${NC}"
 echo -e "${YELLOW}  Weather Service API Tests${NC}"
@@ -27,7 +27,7 @@ test_endpoint() {
     echo -e "${YELLOW}Test:${NC} $test_name"
     echo -e "${YELLOW}URL:${NC} $url"
 
-    response=$(curl -s -w "\n%{http_code}" "$url")
+    response=$(curl -s -k -w "\n%{http_code}" "$url")
     status_code=$(echo "$response" | tail -n1)
     body=$(echo "$response" | head -n-1)
 
@@ -110,6 +110,13 @@ test_endpoint \
     "$BASE_URL/weather/70040902" \
     "200" \
     "temp_C"
+
+# Test 11: Cannot Find CEP
+test_endpoint \
+    "Invalid CEP - With letters (09980491)" \
+    "$BASE_URL/weather/09980491" \
+    "404" \
+    "can not find zipcode"
 
 # Summary
 echo -e "${YELLOW}========================================${NC}"

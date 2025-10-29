@@ -79,11 +79,7 @@ func handleWeather(w http.ResponseWriter, r *http.Request) {
 	// Busca a localização pelo CEP
 	location, err := getLocationByCEP(cep)
 	if err != nil {
-		if err.Error() == "zipcode not found" {
-			respondWithError(w, http.StatusNotFound, "can not find zipcode")
-		} else {
-			respondWithError(w, http.StatusInternalServerError, "internal server error")
-		}
+		respondWithError(w, http.StatusNotFound, "can not find zipcode")
 		return
 	}
 
