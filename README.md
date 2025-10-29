@@ -4,6 +4,8 @@ Sistema em Go que recebe um CEP brasileiro, identifica a cidade e retorna o clim
 
 ## 📋 Índice
 
+- URL GCP: https://weather-service-activity-go-926876726731.us-central1.run.app/
+
 - [Funcionalidades](#-funcionalidades)
 - [Requisitos](#-requisitos)
 - [Instalação e Configuração](#-instalação-e-configuração)
