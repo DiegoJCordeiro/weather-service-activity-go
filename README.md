@@ -2,8 +2,8 @@
 
 Sistema em Go que recebe um CEP brasileiro, identifica a cidade e retorna o clima atual em Celsius, Fahrenheit e Kelvin.
 
-## URL GCP
-- [Clique aqui para acessar](https://weather-service-activity-go-617034962015.us-central1.run.app/weather/09980491)
+## URL GCP - Cloud Run
+- URL: [https://weather-service-activity-go-617034962015.us-central1.run.app](https://weather-service-activity-go-617034962015.us-central1.run.app)
 
 ## 📋 Índice
 
